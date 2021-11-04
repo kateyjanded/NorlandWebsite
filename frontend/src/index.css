@@ -115,7 +115,7 @@ a.brand{
   text-decoration: none;
 }
 
-.row{
+.rows{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -168,16 +168,23 @@ img.large{
   border: 0.1rem #c0c0c0 solid;
   background-color: #f8f8f8;
   border-radius: 0.5rem;
-  margin: 1rem;
 }
 .cardsize{
   width: 25rem;
+  margin: 0.5rem;
+  height: 35rem;
+}
+.cardsize .btn{
+  visibility: hidden;
 }
 .backColor{
   background-color: #fff;
 }
 .cardsize:hover{
-  border: 0.2rem #f8f1f1 solid;
+  border: 0.2rem #160505 solid;
+}
+.cardsize:hover .btn{
+  visibility: visible;
 }
 .card-body{
   padding: 1rem;
@@ -263,10 +270,16 @@ img.large{
   padding: 2rem;
   list-style: none;
 }
-.sidebar li:Hover{
-  background: #ddd;
+.sidebar ul li:Hover{
+  background:blue;
+  color: #FFFFFF;
+  font-weight: bold;
 }
 
+.sidebar ul a:Hover{
+  color: #FFFFFF;
+  font-weight: bold;
+}
 .brand-button{
   font-size: 3rem;
   padding: .5rem;
@@ -280,11 +293,10 @@ img.large{
 
 .sidebar{
   position: fixed;
-  transform: translateX(-30rem);
+  /* transform: translateX(-30rem); */
   width: 30rem;
   background-color: #f0f0f0;
   height: 100%;
-  margin-top: 5rem;
 }
 .sidebar.open{
   transform: translateX(0);

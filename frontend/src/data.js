@@ -39,7 +39,7 @@ const data = {
         {
             _id: '4',
             name: 'Norland Health Way Vision Capsules',
-            category: 'Health & Beauty',
+            category: 'Vision Care',
             image: '/images/Img4.jpg',
             price: 5000,
             countInStock: 15,
@@ -51,7 +51,7 @@ const data = {
         {
             _id: '5',
             name: 'Norland Herbal Toothpaste - Mint(Treatment Of Mouth Odour)',
-            category: 'Health & Beauty',
+            category: 'Oral Care',
             image: '/images/Img5.jpg',
             price: 1250,
             countInStock: 5,
@@ -63,7 +63,7 @@ const data = {
         {
             _id: '6',
             name: 'Norland Healthway Vision Capsule(Restore Your Eyesight Naturally)',
-            category: 'Health & Beauty',
+            category: 'Vision Care',
             image: '/images/Img6.jpg',
             price: 5250,
             countInStock: 12,

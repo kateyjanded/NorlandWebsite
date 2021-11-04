@@ -8,9 +8,13 @@ import {
   PRODUCT_LIST_SUCCESS
 } from "../constants/productConstants";
 
-export const listProducts = () => async (dispatch) => {
+export const listProducts = (payload) => async (dispatch) => {
     dispatch({type: PRODUCT_LIST_REQUEST});
     try {
+        if (payload = "All") {
+            const {data} = await axios.get('/api/products');
+            dispatch({type: PRODUCT_LIST_SUCCESS, payload: data});
+        }
         const {data} = await axios.get('/api/products');
         dispatch({type: PRODUCT_LIST_SUCCESS, payload: data});
     }

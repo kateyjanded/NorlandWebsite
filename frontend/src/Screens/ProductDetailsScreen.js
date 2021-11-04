@@ -30,42 +30,36 @@ export default function ProductDetailsScreen(props) {
                 :
                 (
             <div>
-                <Link to="/">Back to Result</Link>
+                <Link className="h5" to="/">Back to Home Page</Link>
                 <div className="row top2">
-                    <div className="col-2">
-                        <img className="large" src={product.image} alt={product.name}></img>
+                    <div className="col-sm-3">
+                        <img className="large border border-radius" src={product.image} alt={product.name}></img>
                     </div>
-                    <div className="col-1">
+                    <div className="col-6">
                         <ul>
                             <li>
                                 <h1>{product.name}</h1>
                             </li>
                             <li>
-                                <Rating
-                                    rating={product.rating} 
-                                    numReviews={product.numReviews}>
-                                </Rating>
+                                <h3>Price: ₦ {product.price}</h3>
                             </li>
                             <li>
-                                Price: ₦ {product.price}
-                            </li>
-                            <li>
-                                Description:
-                                <p>{product.description}</p>
+                                <h3>Description:</h3>
+                                <p className="h5">{product.description}</p>
                             </li>
                         </ul>
                     </div>
-                    <div className="col-1">
+                    <div className="col-sm-3">
                         <div className="card card-body">
                             <ul>
                                 <li>
-                                    <div className="row">
+                                    <div className="rows">
                                         <div>Price</div>
                                         <div className="price">₦ {product.price}</div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="row">
+                                    <div className="rows">
                                         <div>Status</div>
                                         <div>
                                             {
@@ -80,7 +74,7 @@ export default function ProductDetailsScreen(props) {
                                     product.countInStock > 0 && (
                                         <>
                                             <li>
-                                                <div className="row">
+                                                <div className="rows">
                                                     <div>Qty</div>
                                                     <div>
                                                     <select value={qty} onChange={(e) => setQty(e.target.value)}>

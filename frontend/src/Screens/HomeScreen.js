@@ -5,6 +5,7 @@ import MessageBox from '../components/MessageBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function HomeScreen() {
     const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export default function HomeScreen() {
         dispatch(listProducts());
     }, [dispatch])
     return (
-        <div className="row top2">
+        <div >
             {
                 loading ? (<LoadingBox></LoadingBox>)
                 :
@@ -23,12 +24,11 @@ export default function HomeScreen() {
                 :
                 (
                     <>
-                        <div className="col">
-                            <div className="card newcard">
-                                <h1 className="hd">CATEGORY</h1>
+                        <div className="row">
+                        <div className="col-md-3 h5 sidebar bg-white shadow">
                                 <ul>
-                                    <li><a href="/">Health & Beauty</a></li>
-                                    <li><Link to="/">Beauty & Personal Care</Link></li>
+                                    <li className ><a href="/">Health & Beauty</a></li>
+                                    <li><Link  to="/">Beauty & Personal Care</Link></li>
                                     <li><Link to="/">Health Care</Link></li>
                                     <li><Link to="/">Medical Supplies & Equipment</Link></li>
                                     <li><Link to="/">Oral Care</Link></li>
@@ -39,15 +39,14 @@ export default function HomeScreen() {
                                     <li><Link to="/">Wellness & Relaxation</Link></li>
                                     <li><Link to="/">GENDER</Link></li>
                                 </ul>
-                                
                             </div>
-                        </div>
-                        <div className="col-2 row center card backColor">
-                            {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
-                            <div className="row center">
-                                {products.map((product) => (
-                                    <Product key={product._id} product={product}></Product>
-                                ))}
+                            <div className="col-md-9 d-flex flex-wrap">
+                                {products.length === 0 && <MessageBox>No Product Found</MessageBox>}
+                                <div className=" d-flex flex-wrap">
+                                    {products.map((product) => (
+                                        <Product key={product._id} product={product}></Product>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </>

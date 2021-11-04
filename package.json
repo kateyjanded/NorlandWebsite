@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Adams57/Moya-s-app#readme",
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "express": "^4.17.1",
+    "react-bootstrap": "^1.5.2",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5"
   },
